@@ -2,11 +2,11 @@
 
 ##Schematic Diagram
 
-![](./HC6800-MS schematic diagram.jpg)
+![](./HC6800-MS schematic diagram.JPG)
 
 ##Circuit Diagram
 
-[](./HC6800-MS circuit diagram)
+[PDF format](./HC6800-MS circuit diagram)
 
 ##Program list
 
