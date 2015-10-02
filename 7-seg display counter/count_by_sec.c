@@ -47,9 +47,11 @@ void delay_ms(uint time) {
 }
 
 uchar next_status(uchar s) {
-	s = _crol_(s, 1);
-	if (s > 1 << 3)
-		s = 1;
+	uchar high = 0xF0 & s, low = 0x0F & s;
+	low = _crol_(low, 1);
+	if (low > 1 << 3)
+		low = 1;
+	s = low + high;
 	return s;
 }
 
@@ -57,7 +59,7 @@ uchar next_status(uchar s) {
 
 void scan_key() {
 	if (!k5) {
-		//delay_ms(5);
+		delay_ms(MS);
 		if (!k5) {
 			while (!k5);
 			count = 0;
@@ -65,19 +67,17 @@ void scan_key() {
 	}
 
 	if (!k1) {
-		//delay_ms(5);
+		delay_ms(MS);
 		if (!k1) {
-			/* uncomment it and program show nothing! */
-			//while (!k1);
+			while (!k1);
 			run = 0;
 		}
 	}
 
 	if (!k2) {
-		//delay_ms(5);
+		delay_ms(MS);
 		if (!k2) {
-		/* uncomment it and program show nothing! */
-			//while (!k2);
+			while (!k2);
 			run = 1;
 		}
 	}
@@ -85,10 +85,10 @@ void scan_key() {
 }
 
 void display() {
-	static uchar pos = 1;
+	static uchar pos = 0xF1;
 	P1 = pos;
 	pos = next_status(pos);
-	switch (pos) {
+	switch (pos & 0x0F) {
 	case 1:
 		P0 = digit[count / 1000];
 		break;
