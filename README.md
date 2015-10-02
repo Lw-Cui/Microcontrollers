@@ -1,4 +1,4 @@
-#Develop in STC89C52
+#Develop in `STC89C52`
 
 ##Schematic Diagram
 
@@ -6,8 +6,8 @@
 
 ##Circuit Diagram
 
-[PDF format](./HC6800-MS circuit diagram)
+[PDF format](./HC6800-MS circuit diagram.pdf)
 
-##Program list
+##Program List
 
 * 7-seg display counter
