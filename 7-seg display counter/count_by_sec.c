@@ -39,7 +39,8 @@ void main() {
 			default:
 				break;
 			}
-			delay_ms(MS);			 
+			delay_ms(MS);
+			P0 = 0;			 
 		}
 		if (++count > 9999)
 			count = 0;
