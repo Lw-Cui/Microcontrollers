@@ -1,0 +1,5 @@
+*.obj
+*.__i
+*.plg
+7-seg display counter/count_by_sec
+*.lnp
